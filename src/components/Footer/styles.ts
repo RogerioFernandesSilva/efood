@@ -1,34 +1,42 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
 
-export const ContainerFooter = styled.section`
-  background-color: ${cores.bege};
+export const FooterContainer = styled.footer`
+  background-color: #FFEBD9;
+  border-top: 1px solid #e66767;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
 `
 
 export const Logo = styled.img`
-  display: block;
-  margin: 0 auto;
-  padding-top: 40px;
+  width: 125px;
+  height: 58px;
 `
 
-export const ListLogos = styled.ul`
+export const Socials = styled.div`
   display: flex;
-  list-style: none;
-  justify-content: center;
-  padding-top: 32px;
+  gap: 8px;
+`
 
-  #twitter {
-    margin: 0 8px;
+export const SocialIcon = styled.img`
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.7;
   }
 `
 
-export const TextFooter = styled.p`
-  color: ${cores.rosa};
-  font-size: 10px;
+export const Copy = styled.p`
   width: 480px;
+  height: 24px;
+  color: #e66767;
+  font-size: 10px;
   text-align: center;
-  display: block;
-  margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 `
