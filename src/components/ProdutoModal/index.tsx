@@ -1,47 +1,78 @@
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../store/cartSlice'
+
+import { add, open } from '../../store/reducers/Cart'
+
+import { formataPreco } from '../../utils/formatters'
+
+import close from '../../assets/images/fechar.png'
+
 import * as S from './styles'
 
 type Props = {
-    onClose: () => void
-    prato: {
-        id: number
-        nome: string
-        descricao: string
-        preco: number
-        foto: string
-    }
+  photo: string
+  name: string
+  description: string
+  portion: string
+  price: number
+  id: number
+  isOpen: boolean
+  onClose: () => void
 }
 
-const ProdutoModal = ({ onClose, prato }: Props) => {
-    const dispatch = useDispatch()
+const ProductModal = ({
+  photo,
+  name,
+  description,
+  portion,
+  price,
+  id,
+  isOpen,
+  onClose
+}: Props) => {
+  const dispatch = useDispatch()
 
-    const handleAdd = () => {
-        dispatch(
-            addToCart({
-                id: Date.now(),
-                nome: prato.nome,
-                preco: prato.preco,
-                imagem: prato.foto
-            })
-        )
-        onClose()
-    }
-
-    return (
-        <S.Overlay onClick={onClose}>
-            <S.Modal onClick={(e) => e.stopPropagation()}>
-                <S.Imagem src={prato.foto} alt={prato.descricao} />
-                <S.Info>
-                    <S.Titulo>{prato.nome}</S.Titulo>
-                    <S.Descricao>{prato.descricao}</S.Descricao>
-                    <S.Botao onClick={handleAdd}>
-                        Adicionar ao carrinho - R$ {Number(prato.preco).toFixed(2)}
-                    </S.Botao>
-                </S.Info>
-            </S.Modal>
-        </S.Overlay>
+  const addToCart = () => {
+    dispatch(
+      add({
+        foto: photo,
+        nome: name,
+        descricao: description,
+        porcao: portion,
+        preco: price,
+        id,
+        quantidade: 1
+      })
     )
+    dispatch(open())
+    onClose()
+  }
+
+  const getDescription = (description: string) => {
+    if (description.length > 90) {
+      return description.slice(0, 87) + '...'
+    }
+    return description
+  }
+
+  return (
+    <S.ModalContainer className={isOpen ? 'is-visible' : ''}>
+      <S.ModalContent className="container">
+        <img src={close} alt="Fechar" onClick={onClose} />
+        <header>
+          <img src={photo} alt={name} />
+        </header>
+        <div>
+          <h4>{name}</h4>
+          <p>{getDescription(description)}</p>
+          <p>Serve: de {portion}</p>
+          <S.Button onClick={addToCart}>
+            Adicionar ao carrinho - {formataPreco(price)}
+          </S.Button>
+        </div>
+      </S.ModalContent>
+      <div className="overlay" onClick={onClose}></div>
+    </S.ModalContainer>
+  )
 }
 
-export default ProdutoModal
+export default ProductModal

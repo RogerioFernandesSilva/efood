@@ -1,35 +1,27 @@
 import styled from 'styled-components'
-import bgHeader from '../../assets/images/fundoHeader.svg'
+import { cores } from '../../styles'
 
-export const HeroContainer = styled.header`
-  background-image: url(${bgHeader});
-  background-size: cover;
-  background-position: center;
-  height: 384px;
+export const Imagem = styled.div`
   width: 100%;
+  height: 384px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-style: black;
+  align-items: center;
+  margin-bottom: 80px;
 `
 
- export const Logo = styled.img`
-  width: 125px;
+export const Logo = styled.img`
+  max-width: 100%;
   height: auto;
-  margin-bottom: 260px;
 `
 
-export const Title = styled.h1`
-  position: absolute;
-  width: 540px;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #e66767;
-  font-size: 36px;
+export const TextHeader = styled.p`
   font-weight: bold;
+  font-size: 36px;
+  line-height: 100%;
+  color: ${cores.rosa};
+  margin-top: 138px;
+  max-width: 550px;
   text-align: center;
 `
