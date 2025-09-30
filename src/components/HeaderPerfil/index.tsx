@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import fundoImg from '../../assets/images/fundo.png'
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.png'
 
 import {
   Imagem,

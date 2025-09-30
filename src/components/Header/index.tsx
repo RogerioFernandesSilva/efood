@@ -1,5 +1,5 @@
 import { Imagem, Logo, TextHeader } from './styles'
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.png'
 import headerimg from '../../assets/images/fundo.png'
 
 const Header = () => (

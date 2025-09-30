@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
-import fechar from '../../assets/images/trash.png'
+import fechar from '../../assets/images/botaoFechar.svg'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -87,6 +87,7 @@ button {
       background: none;
       box-shadow: none;
     }
+}
 `
 export const Lixeira = styled.img`
   cursor: pointer;

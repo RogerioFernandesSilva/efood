@@ -30,7 +30,7 @@ export const ContainerRest = styled.div`
     span {
       font-weight: bold;
       margin-top: 8px;
-      margin-bottomL 16px;
+      margin-bottom: 16px;
     }
 
     img {

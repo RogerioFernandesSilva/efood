@@ -1,5 +1,5 @@
 import { ContainerFooter, Logo, ListLogos, TextFooter } from './styles'
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.png'
 import instagramLogo from '../../assets/images/instagram.png'
 import twitterLogo from '../../assets/images/twitter.png'
 import facebookLogo from '../../assets/images/fb.png'
