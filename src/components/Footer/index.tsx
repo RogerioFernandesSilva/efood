@@ -1,35 +1,31 @@
-import { ContainerFooter, Logo, ListLogos, TextFooter } from './styles'
+import * as S from './styles'
+import fb from '../../assets/images/fb.png'
+import insta from '../../assets/images/insta.png'
+import twitter from '../../assets/images/twitter.png'
 import logo from '../../assets/images/logo.png'
-import instagramLogo from '../../assets/images/instagram.png'
-import twitterLogo from '../../assets/images/twitter.png'
-import facebookLogo from '../../assets/images/fb.png'
 
 const Footer = () => (
-  <ContainerFooter>
-    <Logo src={logo} alt="Efood" />
-    <ListLogos>
-      <li>
-        <a href="#">
-          <img src={instagramLogo} alt="Instagram" />
-        </a>
-      </li>
-      <li id="twitter">
-        <a href="#">
-          <img src={twitterLogo} alt="twitter" />
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src={facebookLogo} alt="facebook" />
-        </a>
-      </li>
-    </ListLogos>
-    <TextFooter>
-      A efood é uma plataforma para divulgação de estabelecimentos, a
-      responsabilidade pela entrega, qualidade dos produtos é toda do
-      estabelecimento contratado.
-    </TextFooter>
-  </ContainerFooter>
+  <S.FooterContainer>
+    <div className="container">
+      <img src={logo} alt="" />
+      <S.SocialIcons>
+        <li>
+          <img src={insta} alt="" />
+        </li>
+        <S.SocialIconLiC>
+          <img src={fb} alt="" />
+        </S.SocialIconLiC>
+        <li>
+          <img src={twitter} alt="" />
+        </li>
+      </S.SocialIcons>
+      <S.FooterDescription>
+        A efood é uma plataforma para divulgação de estabelecimentos, a
+        responsabilidade pela entrega, qualidade dos produtos é toda do
+        estabelecimento contratado.{' '}
+      </S.FooterDescription>
+    </div>
+  </S.FooterContainer>
 )
 
 export default Footer

@@ -1,34 +1,26 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 import { cores } from '../../styles'
 
-export const ContainerFooter = styled.section`
-  background-color: ${cores.bege};
-`
+export const FooterContainer = styled.div`
+  background-color: ${cores.bgcolor};
 
-export const Logo = styled.img`
-  display: block;
-  margin: 0 auto;
-  padding-top: 40px;
-`
-
-export const ListLogos = styled.ul`
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  padding-top: 32px;
-
-  #twitter {
-    margin: 0 8px;
+  .container > img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 32px;
   }
 `
+export const SocialIcons = styled.ul`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+`
+export const SocialIconLiC = styled.li`
+  padding: 0 8px;
+`
 
-export const TextFooter = styled.p`
-  color: ${cores.rosa};
-  font-size: 10px;
-  width: 480px;
+export const FooterDescription = styled.p`
   text-align: center;
-  display: block;
-  margin: 0 auto;
-  padding-top: 80px;
   padding-bottom: 40px;
 `
