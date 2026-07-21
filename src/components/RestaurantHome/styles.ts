@@ -1,12 +1,25 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
+import { ButtonLink } from '../Button/styles'
 
 export const Card = styled.div`
   background-color: ${cores.branco};
   border: 1px solid ${cores.rosa};
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 472px;
 
+  img {
+    max-width: 100%;
+    max-height: 217px;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
   ${TagContainer} {
     margin-right: 8px;
   }
@@ -42,6 +55,9 @@ export const Descricao = styled.p`
   display: block;
   margin-top: 16px;
   margin-bottom: 16px;
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 12px;
+  }
 `
 
 export const Infos = styled.div`

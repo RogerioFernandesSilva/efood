@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../../styles'
+import { breakpoints, cores } from '../../../styles'
 
 export const HeaderPerfilContainer = styled.header`
   padding: 40px 0 65px 0;
@@ -9,6 +9,10 @@ export const HeaderPerfilContainer = styled.header`
 
   .container {
     width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
   }
 `
 export const Links = styled.ul`
@@ -35,4 +39,12 @@ export const Links = styled.ul`
     height: 100%;
     z-index: 2;
   }
+`
+export const Image = styled.img`
+  width: 125px;
+  height: 56px;
+`
+
+export const Cart = styled.li`
+  cursor: pointer;
 `

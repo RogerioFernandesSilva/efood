@@ -1,24 +1,32 @@
 import Products from '../Products'
 import * as S from './styles'
-import ProducsType from '../../models/Products'
+import { Restaurants } from '../../pages/Home'
 
 type Props = {
-  products: ProducsType[]
+  restaurants: Restaurants[]
 }
 
-const ProductList = ({ products }: Props) => (
-  <S.Container>
-    <S.List>
-      {products.map((product) => (
-        <Products
-          key={product.id}
-          image={product.image}
-          title={product.title}
-          description={product.description}
-        />
-      ))}
-    </S.List>
-  </S.Container>
-)
+const ProductList = ({ restaurants }: Props) => {
+  return (
+    <S.Container>
+      <S.List>
+        {restaurants.map((rest) =>
+          rest.cardapio.map((product) => (
+            <li key={product.id}>
+              <Products
+                id={product.id}
+                image={product.foto}
+                title={product.nome}
+                description={product.descricao}
+                portion={product.porcao}
+                price={product.preco}
+              />
+            </li>
+          ))
+        )}
+      </S.List>
+    </S.Container>
+  )
+}
 
 export default ProductList

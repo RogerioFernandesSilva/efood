@@ -9,7 +9,7 @@ type Props = {
   description: string
   infos: string[]
   image: string
-  type: string
+  id: number
 }
 
 const RestaurantHome = ({
@@ -18,7 +18,7 @@ const RestaurantHome = ({
   description,
   infos,
   image,
-  type
+  id
 }: Props) => (
   <S.Card>
     <img src={image} alt={title} />
@@ -36,7 +36,11 @@ const RestaurantHome = ({
         </S.NoteContainer>
       </S.TitleContainer>
       <S.Descricao>{description}</S.Descricao>
-      <Button type="link" to={type} title="Clique aqui para saber mais">
+      <Button
+        type="link"
+        to={`/perfil/${id}`}
+        title="Clique aqui para saber mais"
+      >
         Saiba Mais
       </Button>
     </S.CardContent>

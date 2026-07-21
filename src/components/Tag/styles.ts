@@ -10,4 +10,8 @@ export const TagContainer = styled.div<Props>`
   font-size: 12px;
   font-weight: bold;
   display: inline-block;
+  margin-right: 8px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `
