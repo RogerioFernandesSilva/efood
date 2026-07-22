@@ -1,24 +1,44 @@
-import * as S from './styles'
-import bannerImg from '../../../assets/images/banner-fundo.png'
-import logo from '../../../assets/images/logo.png'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const HeaderPerfil = () => (
-  <S.HeaderPerfilContainer style={{ backgroundImage: `url(${bannerImg})` }}>
-    <div className="container">
-      <S.Links>
-        <Link to={'/'}>
-          <li>Restaurante</li>
-        </Link>
-        <li className="logo-li">
-          <Link to={'/'}>
-            <img src={logo} alt="EFood" />
+import bannerImg from '../../../assets/banner-fundo.png'
+import logo from '../../../assets/logo.png'
+import cart from '../../../assets/carrinho.png'
+
+import { RootReducer } from '../../../store'
+import { open } from '../../../store/reducers/cart'
+
+import * as S from './styles'
+
+const HeaderPerfil = () => {
+  const { items } = useSelector((state: RootReducer) => state.cart)
+  const dispatch = useDispatch()
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
+  return (
+    <S.HeaderPerfilContainer style={{ backgroundImage: `url(${bannerImg})` }}>
+      <div className="container">
+        <S.Links>
+          <Link to={'/'} title="Voltar para Restaurantes">
+            <li>Restaurantes</li>
           </Link>
-        </li>
-        <li>0 produto(s) no carrinho</li>
-      </S.Links>
-    </div>
-  </S.HeaderPerfilContainer>
-)
+          <Link to={'/'} title="Voltar para Restaurantes">
+            <li className="logo-li">
+              <img src={logo} alt="EFood" />
+            </li>
+          </Link>
+          <S.Cart onClick={openCart}>
+            {items.length}
+            <span> produto(s) no carrinho</span>
+            <img src={cart} alt="Carrinho" />
+          </S.Cart>
+        </S.Links>
+      </div>
+    </S.HeaderPerfilContainer>
+  )
+}
 
 export default HeaderPerfil

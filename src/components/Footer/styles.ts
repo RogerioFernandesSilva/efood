@@ -1,8 +1,8 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const FooterContainer = styled.div`
-  background-color: ${cores.bgcolor};
+  background-color: ${colors.darkBeige};
 
   .container > img {
     display: block;
@@ -15,6 +15,10 @@ export const SocialIcons = styled.ul`
   display: flex;
   justify-content: center;
   padding-bottom: 80px;
+
+  li img {
+    cursor: pointer;
+  }
 `
 export const SocialIconLiC = styled.li`
   padding: 0 8px;

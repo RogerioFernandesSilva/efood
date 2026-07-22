@@ -1,7 +1,8 @@
-import * as S from './styles'
 import Tag from '../Tag'
 import Button from '../Button'
-import icon from '../../assets/images/estrela.png'
+import icon from '../../assets/estrela.png'
+
+import * as S from './styles'
 
 type Props = {
   title: string
@@ -9,7 +10,7 @@ type Props = {
   description: string
   infos: string[]
   image: string
-  type: string
+  id: number
 }
 
 const RestaurantHome = ({
@@ -18,7 +19,7 @@ const RestaurantHome = ({
   description,
   infos,
   image,
-  type
+  id
 }: Props) => (
   <S.Card>
     <img src={image} alt={title} />
@@ -32,11 +33,15 @@ const RestaurantHome = ({
         <S.Titulo>{title}</S.Titulo>
         <S.NoteContainer>
           <S.Titulo>{note}</S.Titulo>
-          <img src={icon} alt="estrela" />
+          <img src={icon} alt="Estrela" />
         </S.NoteContainer>
       </S.TitleContainer>
       <S.Descricao>{description}</S.Descricao>
-      <Button type="link" to={type} title="Clique aqui para saber mais">
+      <Button
+        type="link"
+        to={`/perfil/${id}`}
+        title="Clique aqui para saber mais"
+      >
         Saiba Mais
       </Button>
     </S.CardContent>

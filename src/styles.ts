@@ -1,10 +1,17 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const cores = {
-  rosa: '#E66767',
-  branco: '#ffffff',
-  beje: '#FFF8F2',
-  bgcolor: '#FFEBD9'
+export const colors = {
+  pink: '#E66767',
+  white: '#ffffff',
+  beige: '#FFF8F2',
+  darkBeige: '#FFEBD9',
+  gray: '#4B4B4B'
+}
+
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px',
+  mobile: '480px'
 }
 
 const GlobalCss = createGlobalStyle`
@@ -18,15 +25,23 @@ const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${cores.beje};
-    color: ${cores.rosa}
+    background-color: ${colors.beige};
+    color: ${colors.pink};
   }
 
 
   .container {
     max-width: 1024px;
-    witdh: 100%;
+    width: 100%;
     margin: 0 auto;
+
+    @media(max-width: ${breakpoints.desktop}) {
+      max-width: 80%;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+    max-width: 90%;
+    }
   }
 `
 

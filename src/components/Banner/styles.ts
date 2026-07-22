@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ export const Imagem = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: ${cores.branco};
+  color: ${colors.white};
   position: relative;
 
   &::after {
@@ -34,6 +34,9 @@ export const TitleOne = styled.h4`
   font-weight: 100;
   padding-top: 24px;
   padding-bottom: 156px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `
 export const TitleTwo = styled.h2`
   font-size: 32px;
