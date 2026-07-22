@@ -34,6 +34,9 @@ export const TitleOne = styled.h4`
   font-weight: 100;
   padding-top: 24px;
   padding-bottom: 156px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `
 export const TitleTwo = styled.h2`
   font-size: 32px;

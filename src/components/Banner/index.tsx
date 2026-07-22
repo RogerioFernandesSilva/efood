@@ -1,18 +1,23 @@
+import { Restaurants } from '../../pages/Home'
 import * as S from './styles'
 
 type Props = {
-  image: string
-  title: string
-  title2: string
+  restaurant: Restaurants
 }
 
-const Banner = ({ image, title, title2 }: Props) => (
-  <S.Imagem style={{ backgroundImage: `url(${image})` }}>
-    <div className="container">
-      <S.TitleOne>{title}</S.TitleOne>
-      <S.TitleTwo>{title2}</S.TitleTwo>
-    </div>
-  </S.Imagem>
-)
+const Banner = ({ restaurant }: Props) => {
+  if (!restaurant) {
+    return <h3>Carregando...</h3>
+  }
+
+  return (
+    <S.Imagem style={{ backgroundImage: `url(${restaurant.capa})` }}>
+      <div className="container">
+        <S.TitleOne>{restaurant.tipo}</S.TitleOne>
+        <S.TitleTwo>{restaurant.titulo}</S.TitleTwo>
+      </div>
+    </S.Imagem>
+  )
+}
 
 export default Banner

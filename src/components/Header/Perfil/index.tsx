@@ -8,7 +8,7 @@ const HeaderPerfil = () => (
     <div className="container">
       <S.Links>
         <Link to={'/'}>
-          <li>Restaurante</li>
+          <li>Restaurantes</li>
         </Link>
         <li className="logo-li">
           <Link to={'/'}>

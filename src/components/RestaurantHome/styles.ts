@@ -7,6 +7,13 @@ export const Card = styled.div`
   border: 1px solid ${cores.rosa};
   position: relative;
 
+  img {
+    max-width: 472px;
+    max-height: 217px;
+    width: 100%;
+    height: 100%;
+  }
+
   ${TagContainer} {
     margin-right: 8px;
   }
